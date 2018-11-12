@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>ANIMACION</title>
+    <script>
+        var miCanvas;
+        var ctx;
+        var gatito = new Image();
+        
+        function inicializar(){
+            miCanvas = document.querySelector("#miCanvas");
+            ctx = miCanvas.getContext("2d");
+            gatito.src = "./images/gatito.png";
+            setInterval(dibujar, 10);
+        }
+        var x = 0;
+        function dibujar(){
+            x++;
+            ctx.fillRect(0,0,400,300);
+            ctx.drawImage(gatito, x, 0, 50, 150);
+        }
+        
+
+    </script>
+</head>
+<body onload="inicializar()" style="background-color: aquamarine">
+    <H1>ANIMACION</H1>
+    <canvas id="miCanvas" width="400px" height="300px">
+
+    </canvas>
+</body>
+</html>
